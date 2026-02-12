@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CabanIA — La IA que responde, cobra y confirma reservas</title>
-  <meta name="description" content="CabanIA centraliza reservas, pagos, disponibilidad y operación de cabañas/parcelas. Además responde WhatsApp/Instagram/Facebook con IA, genera link de pago y confirma reservas." />
+  <title data-i18n="meta.title">CabanIA — La IA que responde, cobra y confirma reservas</title>
+  <meta name="description" content="CabanIA centraliza reservas, pagos, disponibilidad y operación de cabañas/parceles. Además responde WhatsApp/Instagram/Facebook con IA, genera link de pago y confirma reservas." data-i18n-content="meta.description" />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Tailwind CDN -->
@@ -33,19 +33,33 @@
       </a>
 
       <nav class="hidden items-center gap-2 text-sm font-semibold text-slate-300 md:flex">
-        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#beneficios">Beneficios</a>
-        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#ia">IA</a>
-        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#modulos">Módulos</a>
-        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#para-quien">Para quién</a>
-        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#precios">Planes</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#ia" data-i18n="nav.ai">IA</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#modulos" data-i18n="nav.modules">Módulos</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#para-quien" data-i18n="nav.forWhom">Para quién</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#precios" data-i18n="nav.pricing">Planes</a>
         <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#faq">FAQ</a>
       </nav>
 
       <div class="hidden items-center gap-2 md:flex">
-        <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10">
+        <!-- Language Switcher -->
+        <div class="relative">
+          <button id="langBtn" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-extrabold hover:bg-white/10" aria-label="Cambiar idioma">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+              <path d="M3 5h7M10 3v2m-.5 1A6 6 0 0 0 9 13M3 16h12M13 14l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="currentLang">ES</span>
+          </button>
+          <div id="langMenu" class="absolute right-0 top-full mt-2 hidden w-32 rounded-xl border border-white/15 bg-slate-900 shadow-xl">
+            <button class="lang-option w-full rounded-t-xl px-4 py-2 text-left text-sm font-semibold hover:bg-white/5" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option w-full rounded-b-xl px-4 py-2 text-left text-sm font-semibold hover:bg-white/5" data-lang="en">🇺🇸 English</button>
+          </div>
+        </div>
+
+        <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.seeDemo">
           Ver demo
         </a>
-        <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95">
+        <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
           Pedir demo
         </a>
       </div>
@@ -60,18 +74,25 @@
     <div id="mobileNav" class="hidden border-t border-white/10 bg-slate-950/80 backdrop-blur md:hidden">
       <div class="mx-auto w-[min(1120px,calc(100%-40px))] py-3">
         <div class="grid gap-1 text-sm font-semibold text-slate-300">
-          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#beneficios">Beneficios</a>
-          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#ia">IA</a>
-          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#modulos">Módulos</a>
-          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#para-quien">Para quién</a>
-          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#precios">Planes</a>
+          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
+          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#ia" data-i18n="nav.ai">IA</a>
+          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#modulos" data-i18n="nav.modules">Módulos</a>
+          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#para-quien" data-i18n="nav.forWhom">Para quién</a>
+          <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#precios" data-i18n="nav.pricing">Planes</a>
           <a class="rounded-xl px-3 py-2 hover:bg-white/5 hover:text-white" href="#faq">FAQ</a>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
-          <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10">
+          <!-- Mobile Language Switcher -->
+          <div class="flex gap-2">
+            <button class="mobile-lang-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-lang="en">🇺🇸 EN</button>
+          </div>
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.seeDemo">
             Ver demo
           </a>
-          <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95">
+          <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
             Pedir demo
           </a>
         </div>
@@ -86,14 +107,14 @@
         <div>
           <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-extrabold text-slate-300">
             <span class="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(16,185,129,0.15)]"></span>
-            IA omnicanal para reservas (WhatsApp • Instagram • Facebook)
+            <span data-i18n="hero.badge">IA omnicanal para reservas (WhatsApp • Instagram • Facebook)</span>
           </div>
 
-          <h1 class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
+          <h1 class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl" data-i18n="hero.title">
             Tu cabaña vende sola: la IA responde, cobra y confirma reservas.
           </h1>
 
-          <p class="mt-3 max-w-[62ch] text-base text-slate-300">
+          <p class="mt-3 max-w-[62ch] text-base text-slate-300" data-i18n="hero.description">
             CabanIA centraliza <span class="font-bold text-slate-100">reservas + pagos + disponibilidad + operación</span> y además atiende mensajes 24/7,
             genera link de pago cuando el cliente está listo y confirma automáticamente.
           </p>
@@ -105,7 +126,7 @@
                   <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </span>
-              Respuestas automáticas entrenadas con los datos de tu propiedad (planes, cupos, reglas, amenidades).
+              <span data-i18n="hero.feature1">Respuestas automáticas entrenadas con los datos de tu propiedad (planes, cupos, reglas, amenidades).</span>
             </li>
             <li class="flex gap-3">
               <span class="mt-0.5 grid h-6 w-6 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/15">
@@ -113,7 +134,7 @@
                   <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </span>
-              Link de pago + confirmación sin desgaste (menos "¿tienen para tal día?" repetidos).
+              <span data-i18n="hero.feature2">Link de pago + confirmación sin desgaste (menos "¿tienen para tal día?" repetidos).</span>
             </li>
             <li class="flex gap-3">
               <span class="mt-0.5 grid h-6 w-6 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/15">
@@ -121,20 +142,20 @@
                   <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </span>
-              Control total: reservas, ingresos/egresos, mantenimiento, tareas y órdenes de servicio.
+              <span data-i18n="hero.feature3">Control total: reservas, ingresos/egresos, mantenimiento, tareas y órdenes de servicio.</span>
             </li>
           </ul>
 
           <div class="mt-6 flex flex-wrap gap-2">
-            <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95">
+            <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
               Pedir demo
             </a>
-            <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-extrabold hover:bg-white/10">
+            <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-extrabold hover:bg-white/10" data-i18n="hero.seeHow">
               Ver cómo responde la IA
             </a>
           </div>
 
-          <p class="mt-3 text-xs text-slate-400">
+          <p class="mt-3 text-xs text-slate-400" data-i18n="hero.note">
             Nota: "CabanIA" (cabaña + IA). Para URL puedes usar <span class="font-bold text-slate-200">cabania</span> sin ñ.
           </p>
         </div>
@@ -206,8 +227,8 @@
 
     <!-- Benefits -->
     <section id="beneficios" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">Responder mensajes te está quitando la vida.</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="benefits.title">Responder mensajes te está quitando la vida.</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="benefits.description">
         Entre WhatsApp, Instagram y Facebook, las mismas preguntas se repiten y el cliente se enfría.
         CabanIA responde al instante con información exacta de tu propiedad y te ayuda a cerrar la venta.
       </p>
@@ -215,28 +236,28 @@
       <div class="mt-6 grid gap-3 md:grid-cols-3">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-emerald-500/25 bg-emerald-500/10">✅</div>
-          <h3 class="text-base font-extrabold">Menos chats repetidos</h3>
-          <p class="mt-1 text-sm text-slate-300">La IA contesta lo típico: planes, precios, cupos, reglas y ubicación.</p>
+          <h3 class="text-base font-extrabold" data-i18n="benefits.card1.title">Menos chats repetidos</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="benefits.card1.description">La IA contesta lo típico: planes, precios, cupos, reglas y ubicación.</p>
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-sky-500/25 bg-sky-500/10">⚡</div>
-          <h3 class="text-base font-extrabold">Más cierres por rapidez</h3>
-          <p class="mt-1 text-sm text-slate-300">Respuesta inmediata = el cliente no se enfría ni se va a otra parcela.</p>
+          <h3 class="text-base font-extrabold" data-i18n="benefits.card2.title">Más cierres por rapidez</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="benefits.card2.description">Respuesta inmediata = el cliente no se enfría ni se va a otra parcela.</p>
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-amber-400/25 bg-amber-400/10">🧾</div>
-          <h3 class="text-base font-extrabold">Todo queda registrado</h3>
-          <p class="mt-1 text-sm text-slate-300">Reserva, pago, disponibilidad y operación quedan en un solo lugar.</p>
+          <h3 class="text-base font-extrabold" data-i18n="benefits.card3.title">Todo queda registrado</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="benefits.card3.description">Reserva, pago, disponibilidad y operación quedan en un solo lugar.</p>
         </div>
       </div>
     </section>
 
     <!-- IA -->
     <section id="ia" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">La IA no solo responde: también vende.</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="ai.title">La IA no solo responde: también vende.</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="ai.description">
         CabanIA se entrena con los datos de tu propiedad y atiende mensajes omnicanal. Cuando el cliente está listo, genera el link de pago y confirma.
         Tú decides cuándo escalar a un humano.
       </p>
@@ -244,33 +265,33 @@
       <div class="mt-6 grid gap-3 md:grid-cols-2">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-emerald-500/25 bg-emerald-500/10">🧠</div>
-          <h3 class="text-base font-extrabold">Entrenamiento simple</h3>
-          <p class="mt-1 text-sm text-slate-300">Amenidades, planes, cupos, horarios, reglas, ubicación y políticas.</p>
+          <h3 class="text-base font-extrabold" data-i18n="ai.card1.title">Entrenamiento simple</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="ai.card1.description">Amenidades, planes, cupos, horarios, reglas, ubicación y políticas.</p>
         </div>
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-sky-500/25 bg-sky-500/10">💬</div>
-          <h3 class="text-base font-extrabold">Omnicanal</h3>
-          <p class="mt-1 text-sm text-slate-300">Un solo "cerebro" para WhatsApp, Instagram y Facebook.</p>
+          <h3 class="text-base font-extrabold" data-i18n="ai.card2.title">Omnicanal</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="ai.card2.description">Un solo "cerebro" para WhatsApp, Instagram y Facebook.</p>
         </div>
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-emerald-500/25 bg-emerald-500/10">💳</div>
-          <h3 class="text-base font-extrabold">Cierre con pago</h3>
-          <p class="mt-1 text-sm text-slate-300">Link de pago al momento correcto (depósito o total).</p>
+          <h3 class="text-base font-extrabold" data-i18n="ai.card3.title">Cierre con pago</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="ai.card3.description">Link de pago al momento correcto (depósito o total).</p>
         </div>
         <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
           <div class="mb-3 grid h-10 w-10 place-items-center rounded-2xl border border-sky-500/25 bg-sky-500/10">📅</div>
-          <h3 class="text-base font-extrabold">Confirmación automática</h3>
-          <p class="mt-1 text-sm text-slate-300">Reserva confirmada y fecha bloqueada en disponibilidad.</p>
+          <h3 class="text-base font-extrabold" data-i18n="ai.card4.title">Confirmación automática</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="ai.card4.description">Reserva confirmada y fecha bloqueada en disponibilidad.</p>
         </div>
       </div>
 
       <div id="demo" class="mt-10 rounded-2xl border border-white/15 bg-white/5 p-6">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 class="text-lg font-extrabold">Demo rápida (texto)</h3>
-            <p class="mt-1 text-sm text-slate-300">Pregunta → respuesta → pago → confirmación.</p>
+            <h3 class="text-lg font-extrabold" data-i18n="ai.demo.title">Demo rápida (texto)</h3>
+            <p class="mt-1 text-sm text-slate-300" data-i18n="ai.demo.description">Pregunta → respuesta → pago → confirmación.</p>
           </div>
-          <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 hover:opacity-95">
+          <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 hover:opacity-95" data-i18n="ai.demo.seeMore">
             Quiero verlo en vivo
           </a>
         </div>
@@ -291,14 +312,14 @@
 
     <!-- Modules -->
     <section id="modulos" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">Un "ERP" ligero para tu negocio de parcelas/cabañas.</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="modules.title">Un "ERP" ligero para tu negocio de parcelas/cabañas.</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="modules.description">
         Maneja múltiples propiedades, planes y disponibilidad; controla ingresos/egresos; y ordena la operación con mantenimientos, tareas y órdenes de servicio.
       </p>
 
       <div class="mt-6 grid gap-3 md:grid-cols-2">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Reservas & Planes</h3>
+          <h3 class="text-lg font-extrabold" data-i18n="modules.reservations.title">Reservas & Planes</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Múltiples propiedades en una sola cuenta.</li>
             <li>Amenidades: piscina, kiosko, zona verde, BBQ, etc.</li>
@@ -310,7 +331,7 @@
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Finanzas (Ingresos/Egresos)</h3>
+          <h3 class="text-lg font-extrabold" data-i18n="modules.finance.title">Finanzas (Ingresos/Egresos)</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Ingresos por alquileres (por fecha, propiedad, canal).</li>
             <li>Egresos: servicios, nómina, insumos piscina, limpieza, etc.</li>
@@ -326,7 +347,7 @@
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Mantenimientos</h3>
+          <h3 class="text-lg font-extrabold" data-i18n="modules.maintenance.title">Mantenimientos</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Agenda por zonas (jardín, piscina, pintura, etc.).</li>
             <li>Reporte: entrada/salida, personal, insumos, pendientes.</li>
@@ -335,7 +356,7 @@
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Tareas & Órdenes de servicio</h3>
+          <h3 class="text-lg font-extrabold" data-i18n="modules.tasks.title">Tareas & Órdenes de servicio</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Lista de pendientes (pluma goteando, pared descarchada, etc.).</li>
             <li>Convierte tareas en órdenes: proveedor, costo y fecha.</li>
@@ -347,31 +368,31 @@
 
     <!-- For who -->
     <section id="para-quien" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">Hecho para todos los que mueven la operación.</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="forWhom.title">Hecho para todos los que mueven la operación.</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="forWhom.description">
         Cada perfil obtiene un panel útil: propietarios, comisionistas y usuarios finales.
       </p>
 
       <div class="mt-6 grid gap-3 md:grid-cols-3">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Propietarios / Parceleros</h3>
-          <p class="mt-2 text-sm text-slate-300">Administra reservas, pagos, finanzas, tareas y mantenimiento con IA omnicanal.</p>
+          <h3 class="text-lg font-extrabold" data-i18n="forWhom.owners.title">Propietarios / Parceleros</h3>
+          <p class="mt-2 text-sm text-slate-300" data-i18n="forWhom.owners.description">Administra reservas, pagos, finanzas, tareas y mantenimiento con IA omnicanal.</p>
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Comisionistas</h3>
-          <p class="mt-2 text-sm text-slate-300">Pool de parcelas: filtra por zona/fecha/personas/valor agregado. Recomienda, reserva y cobra.</p>
+          <h3 class="text-lg font-extrabold" data-i18n="forWhom.agents.title">Comisionistas</h3>
+          <p class="mt-2 text-sm text-slate-300" data-i18n="forWhom.agents.description">Pool de parcelas: filtra por zona/fecha/personas/valor agregado. Recomienda, reserva y cobra.</p>
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <h3 class="text-lg font-extrabold">Usuarios finales</h3>
-          <p class="mt-2 text-sm text-slate-300">Experiencia tipo Booking/Airbnb (si decides mostrarse). Pago online o en la propiedad.</p>
+          <h3 class="text-lg font-extrabold" data-i18n="forWhom.users.title">Usuarios finales</h3>
+          <p class="mt-2 text-sm text-slate-300" data-i18n="forWhom.users.description">Experiencia tipo Booking/Airbnb (si decides mostrarte). Pago online o en la propiedad.</p>
         </div>
       </div>
 
       <div class="mt-8 rounded-2xl border border-white/15 bg-white/5 p-6">
-        <h3 class="text-lg font-extrabold">Marketplace público (opcional y controlado)</h3>
-        <p class="mt-2 text-sm text-slate-300">
+        <h3 class="text-lg font-extrabold" data-i18n="forWhom.marketplace.title">Marketplace público (opcional y controlado)</h3>
+        <p class="mt-2 text-sm text-slate-300" data-i18n="forWhom.marketplace.description">
           Cada propiedad puede activarse/desactivarse del catálogo público. Tú decides visibilidad, disponibilidad y condiciones.
         </p>
       </div>
@@ -379,16 +400,16 @@
 
     <!-- Pricing -->
     <section id="precios" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">Planes que crecen contigo</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="pricing.title">Planes que crecen contigo</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="pricing.description">
         Puedes dejar precios en blanco por ahora y cerrar en demo.
       </p>
 
       <div class="mt-6 grid gap-3 md:grid-cols-3">
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-extrabold">Starter</span>
-          <h3 class="mt-3 text-lg font-extrabold">Para empezar</h3>
-          <p class="mt-1 text-sm text-slate-300">1 propiedad + reservas + pagos.</p>
+          <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-extrabold" data-i18n="pricing.starter.badge">Starter</span>
+          <h3 class="mt-3 text-lg font-extrabold" data-i18n="pricing.starter.title">Para empezar</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="pricing.starter.description">1 propiedad + reservas + pagos.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Planes y disponibilidad</li>
             <li>Pagos (depósito/total)</li>
@@ -397,9 +418,9 @@
         </div>
 
         <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-lg shadow-emerald-500/10">
-          <span class="inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-extrabold">Pro (recomendado)</span>
-          <h3 class="mt-3 text-lg font-extrabold">Operación completa</h3>
-          <p class="mt-1 text-sm text-slate-200">Multi-propiedad + finanzas + mantenimiento.</p>
+          <span class="inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-extrabold" data-i18n="pricing.pro.badge">Pro (recomendado)</span>
+          <h3 class="mt-3 text-lg font-extrabold" data-i18n="pricing.pro.title">Operación completa</h3>
+          <p class="mt-1 text-sm text-slate-200" data-i18n="pricing.pro.description">Multi-propiedad + finanzas + mantenimiento.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200">
             <li>Ingresos/egresos y balance</li>
             <li>Mantenimientos, tareas y órdenes</li>
@@ -408,9 +429,9 @@
         </div>
 
         <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
-          <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-extrabold">Agency</span>
-          <h3 class="mt-3 text-lg font-extrabold">Comisionistas</h3>
-          <p class="mt-1 text-sm text-slate-300">Pool de parcelas + marketplace.</p>
+          <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-extrabold" data-i18n="pricing.agency.badge">Agency</span>
+          <h3 class="mt-3 text-lg font-extrabold" data-i18n="pricing.agency.title">Comisionistas</h3>
+          <p class="mt-1 text-sm text-slate-300" data-i18n="pricing.agency.description">Pool de parcelas + marketplace.</p>
           <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Gestión de disponibilidad por pool</li>
             <li>Reservas y cobros para clientes</li>
@@ -422,46 +443,46 @@
 
     <!-- FAQ -->
     <section id="faq" class="mx-auto w-[min(1120px,calc(100%-40px))] py-14">
-      <h2 class="text-3xl font-extrabold tracking-tight">Preguntas frecuentes</h2>
-      <p class="mt-3 max-w-[75ch] text-slate-300">Respuestas cortas, directas y enfocadas en confianza.</p>
+      <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="faq.title">Preguntas frecuentes</h2>
+      <p class="mt-3 max-w-[75ch] text-slate-300" data-i18n="faq.description">Respuestas cortas, directas y enfocadas en confianza.</p>
 
       <div class="mt-6 max-w-3xl space-y-3">
         <details class="group rounded-2xl border border-white/15 bg-white/5 p-5">
           <summary class="flex cursor-pointer items-center justify-between gap-3 font-extrabold">
-            ¿La IA puede equivocarse?
+            <span data-i18n="faq.q1.question">¿La IA puede equivocarse?</span>
             <span class="transition group-open:rotate-180">⌄</span>
           </summary>
-          <p class="mt-3 text-sm text-slate-300">
+          <p class="mt-3 text-sm text-slate-300" data-i18n="faq.q1.answer">
             Responde con base a los datos que tú configuras. Puedes definir límites y "escalar a humano" cuando lo necesites.
           </p>
         </details>
 
         <details class="group rounded-2xl border border-white/15 bg-white/5 p-5">
           <summary class="flex cursor-pointer items-center justify-between gap-3 font-extrabold">
-            ¿Se integra con WhatsApp, Instagram y Facebook?
+            <span data-i18n="faq.q2.question">¿Se integra con WhatsApp, Instagram y Facebook?</span>
             <span class="transition group-open:rotate-180">⌄</span>
           </summary>
-          <p class="mt-3 text-sm text-slate-300">
+          <p class="mt-3 text-sm text-slate-300" data-i18n="faq.q2.answer">
             El objetivo es operar omnicanal con un solo "cerebro". La conexión puede hacerse con configuración guiada según canal.
           </p>
         </details>
 
         <details class="group rounded-2xl border border-white/15 bg-white/5 p-5">
           <summary class="flex cursor-pointer items-center justify-between gap-3 font-extrabold">
-            ¿Puedo cobrar depósito o pago total?
+            <span data-i18n="faq.q3.question">¿Puedo cobrar depósito o pago total?</span>
             <span class="transition group-open:rotate-180">⌄</span>
           </summary>
-          <p class="mt-3 text-sm text-slate-300">
+          <p class="mt-3 text-sm text-slate-300" data-i18n="faq.q3.answer">
             Sí. Configuras reglas de cobro: depósito, pago total o pago en propiedad.
           </p>
         </details>
 
         <details class="group rounded-2xl border border-white/15 bg-white/5 p-5">
           <summary class="flex cursor-pointer items-center justify-between gap-3 font-extrabold">
-            ¿Puedo ocultar mi propiedad del marketplace?
+            <span data-i18n="faq.q4.question">¿Puedo ocultar mi propiedad del marketplace?</span>
             <span class="transition group-open:rotate-180">⌄</span>
           </summary>
-          <p class="mt-3 text-sm text-slate-300">
+          <p class="mt-3 text-sm text-slate-300" data-i18n="faq.q4.answer">
             Sí. Tú decides si aparece públicamente o si usas CabanIA solo como panel interno.
           </p>
         </details>
@@ -473,17 +494,17 @@
       <div class="rounded-3xl border border-white/15 bg-white/5 p-7 shadow-2xl shadow-black/40">
         <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div>
-            <h2 class="text-2xl font-extrabold tracking-tight">Deja de perseguir clientes. Deja que CabanIA cierre por ti.</h2>
-            <p class="mt-2 max-w-[70ch] text-sm text-slate-300">
+            <h2 class="text-2xl font-extrabold tracking-tight" data-i18n="cta.title">Deja de perseguir clientes. Deja que CabanIA cierre por ti.</h2>
+            <p class="mt-2 max-w-[70ch] text-sm text-slate-300" data-i18n="cta.description">
               Agenda una demo y lo adaptamos a tu operación.
             </p>
           </div>
           <div class="flex flex-wrap gap-2">
             <a href="mailto:ventas@cabania.com?subject=Quiero%20una%20demo%20de%20CabanIA"
-               class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 hover:opacity-95">
+               class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 hover:opacity-95" data-i18n="cta.scheduleDemo">
               Agendar demo
             </a>
-            <a href="#top" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-extrabold hover:bg-white/10">
+            <a href="#top" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-extrabold hover:bg-white/10" data-i18n="cta.goBack">
               Volver arriba
             </a>
           </div>
@@ -494,7 +515,7 @@
           <input class="w-full rounded-xl border border-white/15 bg-slate-950/40 px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-sky-500/40" placeholder="WhatsApp / Teléfono" />
           <input class="w-full rounded-xl border border-white/15 bg-slate-950/40 px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-sky-500/40" placeholder="Ciudad" />
         </div>
-        <p class="mt-3 text-xs text-slate-400">
+        <p class="mt-3 text-xs text-slate-400" data-i18n="cta.formNote">
           (Formulario visual) — con backend luego.
         </p>
       </div>
@@ -508,17 +529,17 @@
             <span class="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500"></span>
             <span>CabanIA</span>
           </div>
-          <p class="mt-2 max-w-[55ch] text-sm text-slate-400">
+          <p class="mt-2 max-w-[55ch] text-sm text-slate-400" data-i18n="footer.description">
             Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.
           </p>
-          <p class="mt-2 text-xs text-slate-500">© <span id="year"></span> CabanIA. Todos los derechos reservados.</p>
+          <p class="mt-2 text-xs text-slate-500">© <span id="year"></span> CabanIA. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
         </div>
 
         <div class="flex flex-wrap gap-4 text-sm font-semibold text-slate-400">
-          <a class="hover:text-white" href="#beneficios">Beneficios</a>
-          <a class="hover:text-white" href="#ia">IA</a>
-          <a class="hover:text-white" href="#modulos">Módulos</a>
-          <a class="hover:text-white" href="#precios">Planes</a>
+          <a class="hover:text-white" href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
+          <a class="hover:text-white" href="#ia" data-i18n="nav.ai">IA</a>
+          <a class="hover:text-white" href="#modulos" data-i18n="nav.modules">Módulos</a>
+          <a class="hover:text-white" href="#precios" data-i18n="nav.pricing">Planes</a>
           <a class="hover:text-white" href="#faq">FAQ</a>
         </div>
       </div>
@@ -526,8 +547,10 @@
   </main>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile menu
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('mobileNav');
 
@@ -548,6 +571,257 @@
         btn.innerHTML = '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
       });
     });
+
+    // Language switcher
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangSpan = document.getElementById('currentLang');
+
+    langBtn.addEventListener('click', () => {
+      langMenu.classList.toggle('hidden');
+    });
+
+    // Close language menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.add('hidden');
+      }
+    });
+
+    // Translations object
+    const translations = {
+      es: {
+        'meta.title': 'CabanIA — La IA que responde, cobra y confirma reservas',
+        'meta.description': 'CabanIA centraliza reservas, pagos, disponibilidad y operación de cabañas/parcelas. Además responde WhatsApp/Instagram/Facebook con IA, genera link de pago y confirma reservas.',
+        'nav.benefits': 'Beneficios',
+        'nav.ai': 'IA',
+        'nav.modules': 'Módulos',
+        'nav.forWhom': 'Para quién',
+        'nav.pricing': 'Planes',
+        'header.seeDemo': 'Ver demo',
+        'header.requestDemo': 'Pedir demo',
+        'hero.badge': 'IA omnicanal para reservas (WhatsApp • Instagram • Facebook)',
+        'hero.title': 'Tu cabaña vende sola: la IA responde, cobra y confirma reservas.',
+        'hero.description': 'CabanIA centraliza <span class="font-bold text-slate-100">reservas + pagos + disponibilidad + operación</span> y además atiende mensajes 24/7, genera link de pago cuando el cliente está listo y confirma automáticamente.',
+        'hero.feature1': 'Respuestas automáticas entrenadas con los datos de tu propiedad (planes, cupos, reglas, amenidades).',
+        'hero.feature2': 'Link de pago + confirmación sin desgaste (menos "¿tienen para tal día?" repetidos).',
+        'hero.feature3': 'Control total: reservas, ingresos/egresos, mantenimiento, tareas y órdenes de servicio.',
+        'hero.seeHow': 'Ver cómo responde la IA',
+        'hero.note': 'Nota: "CabanIA" (cabaña + IA). Para URL puedes usar <span class="font-bold text-slate-200">cabania</span> sin ñ.',
+        'benefits.title': 'Responder mensajes te está quitando la vida.',
+        'benefits.description': 'Entre WhatsApp, Instagram y Facebook, las mismas preguntas se repiten y el cliente se enfría. CabanIA responde al instante con información exacta de tu propiedad y te ayuda a cerrar la venta.',
+        'benefits.card1.title': 'Menos chats repetidos',
+        'benefits.card1.description': 'La IA contesta lo típico: planes, precios, cupos, reglas y ubicación.',
+        'benefits.card2.title': 'Más cierres por rapidez',
+        'benefits.card2.description': 'Respuesta inmediata = el cliente no se enfría ni se va a otra parcela.',
+        'benefits.card3.title': 'Todo queda registrado',
+        'benefits.card3.description': 'Reserva, pago, disponibilidad y operación quedan en un solo lugar.',
+        'ai.title': 'La IA no solo responde: también vende.',
+        'ai.description': 'CabanIA se entrena con los datos de tu propiedad y atiende mensajes omnicanal. Cuando el cliente está listo, genera el link de pago y confirma. Tú decides cuándo escalar a un humano.',
+        'ai.card1.title': 'Entrenamiento simple',
+        'ai.card1.description': 'Amenidades, planes, cupos, horarios, reglas, ubicación y políticas.',
+        'ai.card2.title': 'Omnicanal',
+        'ai.card2.description': 'Un solo "cerebro" para WhatsApp, Instagram y Facebook.',
+        'ai.card3.title': 'Cierre con pago',
+        'ai.card3.description': 'Link de pago al momento correcto (depósito o total).',
+        'ai.card4.title': 'Confirmación automática',
+        'ai.card4.description': 'Reserva confirmada y fecha bloqueada en disponibilidad.',
+        'ai.demo.title': 'Demo rápida (texto)',
+        'ai.demo.description': 'Pregunta → respuesta → pago → confirmación.',
+        'ai.demo.seeMore': 'Quiero verlo en vivo',
+        'modules.title': 'Un "ERP" ligero para tu negocio de parcelas/cabañas.',
+        'modules.description': 'Maneja múltiples propiedades, planes y disponibilidad; controla ingresos/egresos; y ordena la operación con mantenimientos, tareas y órdenes de servicio.',
+        'modules.reservations.title': 'Reservas & Planes',
+        'modules.finance.title': 'Finanzas (Ingresos/Egresos)',
+        'modules.maintenance.title': 'Mantenimientos',
+        'modules.tasks.title': 'Tareas & Órdenes de servicio',
+        'forWhom.title': 'Hecho para todos los que mueven la operación.',
+        'forWhom.description': 'Cada perfil obtiene un panel útil: propietarios, comisionistas y usuarios finales.',
+        'forWhom.owners.title': 'Propietarios / Parceleros',
+        'forWhom.owners.description': 'Administra reservas, pagos, finanzas, tareas y mantenimiento con IA omnicanal.',
+        'forWhom.agents.title': 'Comisionistas',
+        'forWhom.agents.description': 'Pool de parcelas: filtra por zona/fecha/personas/valor agregado. Recomienda, reserva y cobra.',
+        'forWhom.users.title': 'Usuarios finales',
+        'forWhom.users.description': 'Experiencia tipo Booking/Airbnb (si decides mostrarte). Pago online o en la propiedad.',
+        'forWhom.marketplace.title': 'Marketplace público (opcional y controlado)',
+        'forWhom.marketplace.description': 'Cada propiedad puede activarse/desactivarse del catálogo público. Tú decides visibilidad, disponibilidad y condiciones.',
+        'pricing.title': 'Planes que crecen contigo',
+        'pricing.description': 'Puedes dejar precios en blanco por ahora y cerrar en demo.',
+        'pricing.starter.badge': 'Starter',
+        'pricing.starter.title': 'Para empezar',
+        'pricing.starter.description': '1 propiedad + reservas + pagos.',
+        'pricing.pro.badge': 'Pro (recomendado)',
+        'pricing.pro.title': 'Operación completa',
+        'pricing.pro.description': 'Multi-propiedad + finanzas + mantenimiento.',
+        'pricing.agency.badge': 'Agency',
+        'pricing.agency.title': 'Comisionistas',
+        'pricing.agency.description': 'Pool de parcelas + marketplace.',
+        'faq.title': 'Preguntas frecuentes',
+        'faq.description': 'Respuestas cortas, directas y enfocadas en confianza.',
+        'faq.q1.question': '¿La IA puede equivocarse?',
+        'faq.q1.answer': 'Responde con base a los datos que tú configuras. Puedes definir límites y "escalar a humano" cuando lo necesites.',
+        'faq.q2.question': '¿Se integra con WhatsApp, Instagram y Facebook?',
+        'faq.q2.answer': 'El objetivo es operar omnicanal con un solo "cerebro". La conexión puede hacerse con configuración guiada según canal.',
+        'faq.q3.question': '¿Puedo cobrar depósito o pago total?',
+        'faq.q3.answer': 'Sí. Configuras reglas de cobro: depósito, pago total o pago en propiedad.',
+        'faq.q4.question': '¿Puedo ocultar mi propiedad del marketplace?',
+        'faq.q4.answer': 'Sí. Tú decides si aparece públicamente o si usas CabanIA solo como panel interno.',
+        'cta.title': 'Deja de perseguir clientes. Deja que CabanIA cierre por ti.',
+        'cta.description': 'Agenda una demo y lo adaptamos a tu operación.',
+        'cta.scheduleDemo': 'Agendar demo',
+        'cta.goBack': 'Volver arriba',
+        'cta.formNote': '(Formulario visual) — con backend luego.',
+        'footer.description': 'Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.',
+        'footer.rights': 'Todos los derechos reservados.'
+      },
+      en: {
+        'meta.title': 'CabanIA — AI that responds, charges, and confirms bookings',
+        'meta.description': 'CabanIA centralizes reservations, payments, availability, and operations for cabins/plots. It also handles WhatsApp/Instagram/Facebook with AI, generates payment links, and confirms bookings.',
+        'nav.benefits': 'Benefits',
+        'nav.ai': 'AI',
+        'nav.modules': 'Modules',
+        'nav.forWhom': 'For Whom',
+        'nav.pricing': 'Pricing',
+        'header.seeDemo': 'See demo',
+        'header.requestDemo': 'Request demo',
+        'hero.badge': 'Omnichannel AI for bookings (WhatsApp • Instagram • Facebook)',
+        'hero.title': 'Your cabin sells itself: AI responds, charges, and confirms bookings.',
+        'hero.description': 'CabanIA centralizes <span class="font-bold text-slate-100">reservations + payments + availability + operations</span> and handles messages 24/7, generates payment links when the customer is ready, and confirms automatically.',
+        'hero.feature1': 'Automated responses trained with your property data (plans, capacity, rules, amenities).',
+        'hero.feature2': 'Payment link + confirmation without hassle (fewer repetitive "do you have availability?" messages).',
+        'hero.feature3': 'Total control: reservations, income/expenses, maintenance, tasks, and service orders.',
+        'hero.seeHow': 'See how AI responds',
+        'hero.note': 'Note: "CabanIA" (cabin + AI). For URLs you can use <span class="font-bold text-slate-200">cabania</span> without the ñ.',
+        'benefits.title': 'Answering messages is taking over your life.',
+        'benefits.description': 'Between WhatsApp, Instagram, and Facebook, the same questions repeat and customers lose interest. CabanIA responds instantly with exact information about your property and helps you close the sale.',
+        'benefits.card1.title': 'Fewer repetitive chats',
+        'benefits.card1.description': 'AI answers the typical questions: plans, prices, capacity, rules, and location.',
+        'benefits.card2.title': 'More closures through speed',
+        'benefits.card2.description': 'Instant response = customer doesn\'t lose interest or go to another property.',
+        'benefits.card3.title': 'Everything is recorded',
+        'benefits.card3.description': 'Reservation, payment, availability, and operations all in one place.',
+        'ai.title': 'AI doesn\'t just respond: it also sells.',
+        'ai.description': 'CabanIA trains with your property data and handles omnichannel messages. When the customer is ready, it generates the payment link and confirms. You decide when to escalate to a human.',
+        'ai.card1.title': 'Simple training',
+        'ai.card1.description': 'Amenities, plans, capacity, schedules, rules, location, and policies.',
+        'ai.card2.title': 'Omnichannel',
+        'ai.card2.description': 'One "brain" for WhatsApp, Instagram, and Facebook.',
+        'ai.card3.title': 'Closure with payment',
+        'ai.card3.description': 'Payment link at the right moment (deposit or full amount).',
+        'ai.card4.title': 'Automatic confirmation',
+        'ai.card4.description': 'Reservation confirmed and date blocked in availability.',
+        'ai.demo.title': 'Quick demo (text)',
+        'ai.demo.description': 'Question → response → payment → confirmation.',
+        'ai.demo.seeMore': 'I want to see it live',
+        'modules.title': 'A lightweight "ERP" for your cabin/plot business.',
+        'modules.description': 'Manage multiple properties, plans, and availability; control income/expenses; and organize operations with maintenance, tasks, and service orders.',
+        'modules.reservations.title': 'Reservations & Plans',
+        'modules.finance.title': 'Finance (Income/Expenses)',
+        'modules.maintenance.title': 'Maintenance',
+        'modules.tasks.title': 'Tasks & Service Orders',
+        'forWhom.title': 'Made for everyone who runs the operation.',
+        'forWhom.description': 'Each profile gets a useful panel: owners, agents, and end users.',
+        'forWhom.owners.title': 'Owners / Plot Owners',
+        'forWhom.owners.description': 'Manage reservations, payments, finances, tasks, and maintenance with omnichannel AI.',
+        'forWhom.agents.title': 'Agents',
+        'forWhom.agents.description': 'Property pool: filter by zone/date/people/added value. Recommend, book, and charge.',
+        'forWhom.users.title': 'End users',
+        'forWhom.users.description': 'Booking/Airbnb-like experience (if you choose to show). Online or on-property payment.',
+        'forWhom.marketplace.title': 'Public marketplace (optional and controlled)',
+        'forWhom.marketplace.description': 'Each property can be activated/deactivated from the public catalog. You decide visibility, availability, and conditions.',
+        'pricing.title': 'Plans that grow with you',
+        'pricing.description': 'You can leave prices blank for now and close during demo.',
+        'pricing.starter.badge': 'Starter',
+        'pricing.starter.title': 'To get started',
+        'pricing.starter.description': '1 property + reservations + payments.',
+        'pricing.pro.badge': 'Pro (recommended)',
+        'pricing.pro.title': 'Complete operation',
+        'pricing.pro.description': 'Multi-property + finance + maintenance.',
+        'pricing.agency.badge': 'Agency',
+        'pricing.agency.title': 'Agents',
+        'pricing.agency.description': 'Property pool + marketplace.',
+        'faq.title': 'Frequently asked questions',
+        'faq.description': 'Short, direct, and trust-focused answers.',
+        'faq.q1.question': 'Can the AI make mistakes?',
+        'faq.q1.answer': 'It responds based on the data you configure. You can set limits and "escalate to human" when needed.',
+        'faq.q2.question': 'Does it integrate with WhatsApp, Instagram, and Facebook?',
+        'faq.q2.answer': 'The goal is to operate omnichannel with one "brain". The connection can be made with guided configuration per channel.',
+        'faq.q3.question': 'Can I charge a deposit or full payment?',
+        'faq.q3.answer': 'Yes. You configure payment rules: deposit, full payment, or on-property payment.',
+        'faq.q4.question': 'Can I hide my property from the marketplace?',
+        'faq.q4.answer': 'Yes. You decide if it appears publicly or if you use CabanIA only as an internal panel.',
+        'cta.title': 'Stop chasing customers. Let CabanIA close for you.',
+        'cta.description': 'Schedule a demo and we\'ll adapt it to your operation.',
+        'cta.scheduleDemo': 'Schedule demo',
+        'cta.goBack': 'Go back to top',
+        'cta.formNote': '(Visual form) — backend coming later.',
+        'footer.description': 'Reservations, payments, availability, and operations for cabins/plots, with omnichannel AI to respond and close.',
+        'footer.rights': 'All rights reserved.'
+      }
+    };
+
+    // Get stored language or default to Spanish
+    let currentLang = localStorage.getItem('cabaniaLang') || 'es';
+
+    // Function to change language
+    function changeLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('cabaniaLang', lang);
+
+      // Update HTML lang attribute
+      document.documentElement.setAttribute('lang', lang);
+
+      // Update current language display
+      currentLangSpan.textContent = lang.toUpperCase();
+
+      // Update all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Update title and meta description
+      const title = document.querySelector('title');
+      if (title) title.textContent = translations[lang]['meta.title'];
+
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.setAttribute('content', translations[lang]['meta.description']);
+
+      // Close language menu
+      langMenu.classList.add('hidden');
+
+      // Update domain links if needed (for external navigation)
+      updateDomainLinks(lang);
+    }
+
+    // Function to update domain-specific links
+    function updateDomainLinks(lang) {
+      // You can add logic here to change links to different domains
+      // e.g., cabania.com for Spanish, cabania.info for English
+      const domain = lang === 'es' ? 'cabania.com' : 'cabania.info';
+      // Update any external domain references if needed
+    }
+
+    // Desktop language options click
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        const lang = e.currentTarget.getAttribute('data-lang');
+        changeLanguage(lang);
+      });
+    });
+
+    // Mobile language options click
+    document.querySelectorAll('.mobile-lang-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        const lang = e.currentTarget.getAttribute('data-lang');
+        changeLanguage(lang);
+      });
+    });
+
+    // Initialize language on page load
+    changeLanguage(currentLang);
   </script>
 </body>
 </html>
