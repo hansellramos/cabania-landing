@@ -1,0 +1,14 @@
+# robots.txt para CabanIA
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cabania.info/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
