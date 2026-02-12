@@ -3,7 +3,6 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://cabania.com/sitemap.xml
 Sitemap: https://cabania.info/sitemap.xml
 
 # Google
