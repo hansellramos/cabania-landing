@@ -61,8 +61,43 @@
     posthog.init('phc_CaLOE6EX6PZmkuCsQTs3HcrrOMyhQinVOfvoDAh0cVT', {api_host: 'https://us.i.posthog.com'})
   </script>
 
-  <!-- Sienna Accessibility Widget -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bennyluk/Sienna-Accessibility-Widget/dist/sienna.css">
+  <!-- Anti-FOUC: apply theme before render -->
+  <script>
+    (function(){var s=localStorage.getItem('cabaniaTheme')||'auto';var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(!(s==='dark'||(s==='auto'&&d)))document.documentElement.classList.add('light');})();
+  </script>
+
+  <style>
+    body,header,footer,details,input,.rounded-2xl,.rounded-3xl{transition:background .3s,color .3s,border-color .3s,box-shadow .3s}
+    html.light body{background:linear-gradient(135deg,#e8f5e9 0%,#e0f2fe 30%,#f1f5f9 60%,#ecfdf5 100%)!important;color:#1e293b!important}
+    html.light [aria-hidden="true"]>div{opacity:.35!important;filter:blur(100px)!important}
+    html.light header{background:rgba(255,255,255,.4)!important;backdrop-filter:blur(20px) saturate(180%)!important;-webkit-backdrop-filter:blur(20px) saturate(180%)!important;border-bottom-color:rgba(255,255,255,.6)!important;box-shadow:0 1px 3px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.7)}
+    html.light #mobileNav{background:rgba(255,255,255,.6)!important;backdrop-filter:blur(20px) saturate(180%)!important;-webkit-backdrop-filter:blur(20px) saturate(180%)!important;border-color:rgba(255,255,255,.4)!important}
+    html.light #langMenu,html.light #themeMenu{background:rgba(255,255,255,.85)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;border-color:rgba(0,0,0,.08)!important}
+    html.light .rounded-2xl.border{background:rgba(255,255,255,.35)!important;backdrop-filter:blur(16px) saturate(180%)!important;-webkit-backdrop-filter:blur(16px) saturate(180%)!important;border-color:rgba(255,255,255,.5)!important;box-shadow:0 4px 24px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.8)}
+    html.light .border-emerald-500\/30{background:rgba(16,185,129,.08)!important;border-color:rgba(16,185,129,.25)!important;box-shadow:0 4px 24px rgba(16,185,129,.1),inset 0 1px 0 rgba(255,255,255,.6)}
+    html.light .border-emerald-500\/25{background:rgba(16,185,129,.06)!important;border-color:rgba(16,185,129,.2)!important}
+    html.light .border-sky-500\/25{background:rgba(14,165,233,.06)!important;border-color:rgba(14,165,233,.2)!important}
+    html.light .bg-slate-950\/40{background:rgba(255,255,255,.45)!important;border-color:rgba(255,255,255,.5)!important}
+    html.light .rounded-3xl.border{background:rgba(255,255,255,.3)!important;backdrop-filter:blur(20px) saturate(180%)!important;-webkit-backdrop-filter:blur(20px) saturate(180%)!important;border-color:rgba(255,255,255,.5)!important;box-shadow:0 8px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.7)}
+    html.light footer{background:rgba(255,255,255,.3)!important;backdrop-filter:blur(16px) saturate(150%)!important;-webkit-backdrop-filter:blur(16px) saturate(150%)!important;border-top-color:rgba(255,255,255,.5)!important}
+    html.light details{background:rgba(255,255,255,.35)!important;backdrop-filter:blur(16px) saturate(180%)!important;-webkit-backdrop-filter:blur(16px) saturate(180%)!important;border-color:rgba(255,255,255,.5)!important;box-shadow:0 2px 12px rgba(0,0,0,.04),inset 0 1px 0 rgba(255,255,255,.8)}
+    html.light input{background:rgba(255,255,255,.5)!important;border-color:rgba(0,0,0,.08)!important;color:#1e293b!important}
+    html.light input::placeholder{color:#94a3b8!important}
+    html.light .bg-white\/5{background:rgba(255,255,255,.4)!important;border-color:rgba(0,0,0,.08)!important}
+    html.light .bg-white\/5:hover{background:rgba(255,255,255,.6)!important}
+    html.light .border-b.bg-white\/5,html.light .border-t.bg-white\/5{background:rgba(255,255,255,.3)!important;border-color:rgba(255,255,255,.4)!important}
+    html.light .shadow-2xl{box-shadow:0 4px 24px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.8)!important}
+    html.light .text-slate-100{color:#1e293b!important}
+    html.light .text-slate-200{color:#334155!important}
+    html.light .text-slate-300{color:#475569!important}
+    html.light .text-slate-400{color:#64748b!important}
+    html.light .text-slate-500{color:#64748b!important}
+    html.light .text-white{color:#0f172a!important}
+    html.light .from-emerald-500.to-sky-500{color:#fff!important}
+    html.light .text-slate-950{color:#fff!important}
+    html.light nav a:hover,html.light footer a:hover{color:#0f172a!important}
+    .theme-active{background:rgba(16,185,129,.15)!important;color:#10b981!important}
+  </style>
 </head>
 
 <body class="min-h-screen bg-slate-950 text-slate-100">
@@ -110,6 +145,20 @@
           </div>
         </div>
 
+        <!-- Theme Switcher -->
+        <div class="relative">
+          <button id="themeBtn" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-extrabold hover:bg-white/10" aria-label="Cambiar tema">
+            <svg id="themeIcon" class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div id="themeMenu" class="absolute right-0 top-full mt-2 hidden w-36 rounded-xl border border-white/15 bg-slate-900 shadow-xl">
+            <button class="theme-option w-full rounded-t-xl px-4 py-2 text-left text-sm font-semibold hover:bg-white/5" data-theme="light" data-i18n="theme.light">☀️ Claro</button>
+            <button class="theme-option w-full px-4 py-2 text-left text-sm font-semibold hover:bg-white/5" data-theme="dark" data-i18n="theme.dark">🌙 Oscuro</button>
+            <button class="theme-option w-full rounded-b-xl px-4 py-2 text-left text-sm font-semibold hover:bg-white/5" data-theme="auto" data-i18n="theme.auto">💻 Auto</button>
+          </div>
+        </div>
+
         <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.seeDemo">
           Ver demo
         </a>
@@ -140,6 +189,12 @@
           <div class="flex gap-2">
             <button class="mobile-lang-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-lang="es">🇪🇸 ES</button>
             <button class="mobile-lang-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-lang="en">🇺🇸 EN</button>
+          </div>
+          <!-- Mobile Theme Switcher -->
+          <div class="flex gap-2">
+            <button class="mobile-theme-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-theme="light" data-i18n="theme.light.short">☀️ Claro</button>
+            <button class="mobile-theme-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-theme="dark" data-i18n="theme.dark.short">🌙 Oscuro</button>
+            <button class="mobile-theme-option rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-extrabold hover:bg-white/10" data-theme="auto" data-i18n="theme.auto.short">💻 Auto</button>
           </div>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
@@ -601,7 +656,7 @@
   </main>
 
   <!-- Sienna Accessibility Widget -->
-  <script src="https://cdn.jsdelivr.net/gh/bennyluk/Sienna-Accessibility-Widget/dist/sienna.min.js"></script>
+  <script src="vendor/sienna-accessibility.umd.js"></script>
 
   <script>
     // Year
@@ -636,6 +691,7 @@
 
     langBtn.addEventListener('click', () => {
       langMenu.classList.toggle('hidden');
+      document.getElementById('themeMenu').classList.add('hidden');
     });
 
     // Close language menu when clicking outside
@@ -729,7 +785,13 @@
         'cta.goBack': 'Volver arriba',
         'cta.formNote': '(Formulario visual) — con backend luego.',
         'footer.description': 'Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.',
-        'footer.rights': 'Todos los derechos reservados.'
+        'footer.rights': 'Todos los derechos reservados.',
+        'theme.light': '☀️ Claro',
+        'theme.dark': '🌙 Oscuro',
+        'theme.auto': '💻 Auto',
+        'theme.light.short': '☀️ Claro',
+        'theme.dark.short': '🌙 Oscuro',
+        'theme.auto.short': '💻 Auto'
       },
       en: {
         'meta.title': 'CabanIA — AI that responds, charges, and confirms bookings',
@@ -813,7 +875,13 @@
         'cta.goBack': 'Go back to top',
         'cta.formNote': '(Visual form) — backend coming later.',
         'footer.description': 'Reservations, payments, availability, and operations for cabins/plots, with omnichannel AI to respond and close.',
-        'footer.rights': 'All rights reserved.'
+        'footer.rights': 'All rights reserved.',
+        'theme.light': '☀️ Light',
+        'theme.dark': '🌙 Dark',
+        'theme.auto': '💻 Auto',
+        'theme.light.short': '☀️ Light',
+        'theme.dark.short': '🌙 Dark',
+        'theme.auto.short': '💻 Auto'
       }
     };
 
@@ -876,6 +944,71 @@
         changeLanguage(lang);
       });
     });
+
+    // Theme switcher
+    const themeBtn = document.getElementById('themeBtn');
+    const themeMenu = document.getElementById('themeMenu');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    themeBtn.addEventListener('click', () => {
+      themeMenu.classList.toggle('hidden');
+      langMenu.classList.add('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!themeBtn.contains(e.target) && !themeMenu.contains(e.target)) {
+        themeMenu.classList.add('hidden');
+      }
+    });
+
+    function applyTheme(choice) {
+      localStorage.setItem('cabaniaTheme', choice);
+      var isDark = choice === 'dark' || (choice === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('light', !isDark);
+      themeMeta.setAttribute('content', isDark ? '#0b1220' : '#f1f5f9');
+
+      // Update icon
+      if (choice === 'light') {
+        themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      } else if (choice === 'dark') {
+        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+      } else {
+        themeIcon.innerHTML = '<path d="M2 12h2m16 0h2M12 2v2m0 16v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 8a4 4 0 0 0 0 8" fill="currentColor" opacity=".3"/>';
+      }
+
+      // Update active states - desktop
+      document.querySelectorAll('.theme-option').forEach(function(o) {
+        o.classList.toggle('theme-active', o.getAttribute('data-theme') === choice);
+      });
+      // Update active states - mobile
+      document.querySelectorAll('.mobile-theme-option').forEach(function(o) {
+        o.classList.toggle('theme-active', o.getAttribute('data-theme') === choice);
+      });
+    }
+
+    // Desktop theme options
+    document.querySelectorAll('.theme-option').forEach(function(o) {
+      o.addEventListener('click', function() {
+        applyTheme(this.getAttribute('data-theme'));
+        themeMenu.classList.add('hidden');
+      });
+    });
+
+    // Mobile theme options
+    document.querySelectorAll('.mobile-theme-option').forEach(function(o) {
+      o.addEventListener('click', function() {
+        applyTheme(this.getAttribute('data-theme'));
+      });
+    });
+
+    // Listen for OS theme changes (for auto mode)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+      if ((localStorage.getItem('cabaniaTheme') || 'auto') === 'auto') applyTheme('auto');
+    });
+
+    // Initialize theme
+    applyTheme(localStorage.getItem('cabaniaTheme') || 'auto');
 
     // Initialize language on page load
     changeLanguage(currentLang);
