@@ -27,6 +27,13 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://cabania.info/" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
   {
@@ -112,13 +119,8 @@
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur">
     <div class="mx-auto flex w-[min(1120px,calc(100%-40px))] items-center justify-between gap-4 py-3">
       <a href="#top" class="flex items-center gap-3 font-extrabold tracking-tight">
-        <span class="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 shadow-lg shadow-emerald-500/10">
-          <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-            <path d="M4 20V10.5L12 4l8 6.5V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </span>
-        <span class="text-lg">CabanIA</span>
+        <img src="/favicon.svg" alt="CabanIA Logo" class="h-9 w-9" />
+        <img src="/logo-wordmark.svg" alt="CabanIA" class="h-7" />
       </a>
 
       <nav class="hidden items-center gap-2 text-sm font-semibold text-slate-300 md:flex">
@@ -634,9 +636,9 @@
     <footer class="border-t border-white/10 bg-black/10">
       <div class="mx-auto flex w-[min(1120px,calc(100%-40px))] flex-col gap-4 py-8 md:flex-row md:items-start md:justify-between">
         <div>
-          <div class="flex items-center gap-3 font-extrabold">
-            <span class="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500"></span>
-            <span>CabanIA</span>
+          <div class="flex items-center gap-3 font-extrabold tracking-tight">
+            <img src="/favicon.svg" alt="CabanIA Logo" class="h-9 w-9" />
+            <img src="/logo-wordmark.svg" alt="CabanIA" class="h-7" />
           </div>
           <p class="mt-2 max-w-[55ch] text-sm text-slate-400" data-i18n="footer.description">
             Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.
