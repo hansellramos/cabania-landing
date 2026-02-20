@@ -161,12 +161,15 @@
           </div>
         </div>
 
+        <a href="https://cabania.app" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.access">
+          Acceder
+        </a>
         <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.seeDemo">
           Ver demo
         </a>
-        <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
+        <button data-cal-link="hansellramos/15min" data-cal-config='{"layout":"mobile"}' class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
           Pedir demo
-        </a>
+        </button>
       </div>
 
       <button id="menuBtn" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 md:hidden" aria-label="Abrir menú" aria-expanded="false">
@@ -200,12 +203,15 @@
           </div>
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
+          <a href="https://cabania.app" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.access">
+            Acceder
+          </a>
           <a href="#demo" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-extrabold hover:bg-white/10" data-i18n="header.seeDemo">
             Ver demo
           </a>
-          <a href="#cta" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
+          <button data-cal-link="hansellramos/15min" data-cal-config='{"layout":"mobile"}' class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-4 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/10 hover:opacity-95" data-i18n="header.requestDemo">
             Pedir demo
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -611,24 +617,15 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <a href="mailto:ventas@cabania.com?subject=Quiero%20una%20demo%20de%20CabanIA"
+            <button data-cal-link="hansellramos/15min" data-cal-config='{"layout":"mobile"}'
                class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-emerald-500 to-sky-500 px-5 py-3 text-sm font-extrabold text-slate-950 hover:opacity-95" data-i18n="cta.scheduleDemo">
               Agendar demo
-            </a>
+            </button>
             <a href="#top" class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-extrabold hover:bg-white/10" data-i18n="cta.goBack">
               Volver arriba
             </a>
           </div>
         </div>
-
-        <div class="mt-6 grid gap-3 md:grid-cols-3">
-          <input class="w-full rounded-xl border border-white/15 bg-slate-950/40 px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-sky-500/40" placeholder="Nombre" />
-          <input class="w-full rounded-xl border border-white/15 bg-slate-950/40 px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-sky-500/40" placeholder="WhatsApp / Teléfono" />
-          <input class="w-full rounded-xl border border-white/15 bg-slate-950/40 px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-sky-500/40" placeholder="Ciudad" />
-        </div>
-        <p class="mt-3 text-xs text-slate-400" data-i18n="cta.formNote">
-          (Formulario visual) — con backend luego.
-        </p>
       </div>
     </section>
 
@@ -643,7 +640,12 @@
           <p class="mt-2 max-w-[55ch] text-sm text-slate-400" data-i18n="footer.description">
             Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.
           </p>
-          <p class="mt-2 text-xs text-slate-500">© <span id="year"></span> CabanIA. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+          <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400">
+            <a href="https://cabania.app" target="_blank" rel="noopener" class="hover:text-white" data-i18n="footer.app">Ir a la app</a>
+            <a href="mailto:hola@cabania.co" class="hover:text-white" data-i18n-attr="href:footer.email">hola@cabania.co</a>
+            <a href="https://instagram.com/cabania.co" target="_blank" rel="noopener" class="hover:text-white">@cabania.co</a>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">© <span id="year"></span> CabanIA. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
         </div>
 
         <div class="flex flex-wrap gap-4 text-sm font-semibold text-slate-400">
@@ -713,6 +715,7 @@
         'nav.modules': 'Módulos',
         'nav.forWhom': 'Para quién',
         'nav.pricing': 'Planes',
+        'header.access': 'Acceder',
         'header.seeDemo': 'Ver demo',
         'header.requestDemo': 'Pedir demo',
         'hero.badge': 'IA omnicanal para reservas (WhatsApp • Instagram • Facebook)',
@@ -785,8 +788,9 @@
         'cta.description': 'Agenda una demo y lo adaptamos a tu operación.',
         'cta.scheduleDemo': 'Agendar demo',
         'cta.goBack': 'Volver arriba',
-        'cta.formNote': '(Formulario visual) — con backend luego.',
         'footer.description': 'Reservas, pagos, disponibilidad y operación para cabañas/parcelas, con IA omnicanal para responder y cerrar.',
+        'footer.app': 'Ir a la app',
+        'footer.email': 'mailto:hola@cabania.co',
         'footer.rights': 'Todos los derechos reservados.',
         'theme.light': '☀️ Claro',
         'theme.dark': '🌙 Oscuro',
@@ -803,6 +807,7 @@
         'nav.modules': 'Modules',
         'nav.forWhom': 'For Whom',
         'nav.pricing': 'Pricing',
+        'header.access': 'Sign in',
         'header.seeDemo': 'See demo',
         'header.requestDemo': 'Request demo',
         'hero.badge': 'Omnichannel AI for bookings (WhatsApp • Instagram • Facebook)',
@@ -875,8 +880,9 @@
         'cta.description': 'Schedule a demo and we\'ll adapt it to your operation.',
         'cta.scheduleDemo': 'Schedule demo',
         'cta.goBack': 'Go back to top',
-        'cta.formNote': '(Visual form) — backend coming later.',
         'footer.description': 'Reservations, payments, availability, and operations for cabins/plots, with omnichannel AI to respond and close.',
+        'footer.app': 'Go to app',
+        'footer.email': 'mailto:hi@cabania.co',
         'footer.rights': 'All rights reserved.',
         'theme.light': '☀️ Light',
         'theme.dark': '🌙 Dark',
@@ -1014,6 +1020,13 @@
 
     // Initialize language on page load
     changeLanguage(currentLang);
+  </script>
+
+  <!-- Cal.com embed script -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#10b981"}},"hideEventTypeDetails":false,"layout":"mobile"});
   </script>
 </body>
 </html>
